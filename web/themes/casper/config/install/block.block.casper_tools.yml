@@ -1,0 +1,26 @@
+uuid: fd00b7b2-b531-4a2f-8600-d325b09824e9
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: 5wTEz_P2xBebRnJF8-tl3iKlb2UwUlTFJHkoOtoqZBc
+id: casper_tools
+theme: casper
+region: '-1'
+weight: -1
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

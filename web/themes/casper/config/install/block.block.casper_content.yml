@@ -1,0 +1,22 @@
+uuid: c7e503ef-8e5b-493f-a71b-27d92e145e93
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: Re4Z9IQu61FPqprDsONSp60bsZV1uR8gbwir5_y1iYI
+id: casper_content
+theme: casper
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

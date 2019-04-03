@@ -1,0 +1,22 @@
+uuid: 0d984b7b-672f-42a8-9600-fa77bd8c2410
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: zFrMf6dQDt9unzuYMvkn3TA8y6ClNWhroa-p5Dv9XoY
+id: casper_messages
+theme: casper
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

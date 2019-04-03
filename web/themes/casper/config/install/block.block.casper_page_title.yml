@@ -1,0 +1,20 @@
+uuid: 54c02317-70df-46d2-af03-3c0debd83664
+langcode: en
+status: false
+dependencies:
+  theme:
+    - casper
+_core:
+  default_config_hash: kVqaYvDmeY9jzgrUDSmAeXbJaDwbAPgeWs5TPa_isGY
+id: casper_page_title
+theme: casper
+region: '-1'
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

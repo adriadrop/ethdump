@@ -1,0 +1,21 @@
+uuid: cfd8608e-5548-4d88-a500-f33552bf0a12
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - user
+_core:
+  default_config_hash: U2AOTAFNdZcZUtrApBEKMYHilKeI0vh_rNqzT43iXtk
+id: user.field_facebook
+field_name: field_facebook
+entity_type: user
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,48 @@
+<body class="home-template nav-closed">
+<span class="nav-cover"></span>
+{% if page.menu %}
+    {{ page.menu }}
+{% endif %}
+<div class="site-wrapper front">
+<header class="main-header" style="background-image: url({{ front_page_background_image }})">
+    <nav class="main-nav overlay clearfix">
+        {% if website_logo %}
+            <a class="blog-logo" href="/"><img src="{{ website_logo }}" alt="{{ front_page_title }}"></a>
+        {% endif %}
+        <a class="menu-button icon-menu" href="#"><span class="word">{{ "Menu"|t }}</span></a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            {% if front_page_title %}
+                <h1 class="page-title">{{ front_page_title }}</h1>
+            {% endif %}
+
+            {% if front_page_sub_heading %}
+            <h2 class="page-description">{{ front_page_sub_heading }}</h2>
+            {% endif %}
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#front-content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+<div class="highlighted">
+{{ page.highlighted }}
+</div>
+    {% if page.help %}
+        {{ page.help }}
+    {% endif %}
+    <main role="main">
+        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+        {% if page.content %}
+        <div class="layout-content" id="front-content">
+            {{ page.content }}
+        </div>
+        {% endif %}
+    </main>
+    {% if page.footer %}
+        <footer role="contentinfo">
+            {{ page.footer }}
+        </footer>
+    {% endif %}
+
+</body>
+</div>

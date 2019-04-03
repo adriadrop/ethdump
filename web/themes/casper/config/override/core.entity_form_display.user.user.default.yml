@@ -1,0 +1,97 @@
+uuid: 6921e496-30ea-49c8-ba05-5cdc52840d95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_facebook
+    - field.field.user.user.field_full_name
+    - field.field.user.user.field_google_
+    - field.field.user.user.field_header_user_picture
+    - field.field.user.user.field_profile_picture
+    - field.field.user.user.field_twitter
+    - field.field.user.user.field_website
+    - field.field.user.user.user_picture
+  module:
+    - image
+    - link
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_bio:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_facebook:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_full_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_google_:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_header_user_picture:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_profile_picture:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_twitter:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_website:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  language:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_picture: true

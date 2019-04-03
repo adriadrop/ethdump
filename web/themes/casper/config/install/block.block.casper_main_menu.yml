@@ -1,0 +1,26 @@
+uuid: aed1d884-d210-4c71-9200-a641da6e24c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: KOJp46448qym-dUQr1y5gdmsTHXOzouf5so2MLd4-_Q
+id: casper_main_menu
+theme: casper
+region: menu
+weight: -8
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

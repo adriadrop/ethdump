@@ -1,0 +1,332 @@
+<?php
+
+use Drupal\file\Entity\File;
+use Drupal\Component\Utility\Unicode;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\system\Form\ThemeSettingsForm;
+use Drupal\Core\Url;
+use Drupal\file\Plugin\Core\Entity\FileInterface;
+use Drupal\casper\Form\CasperCallbacks;
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function casper_preprocess_node(&$variables){
+    _casper_preprocess_dump($variables);
+    _casper_images($variables);
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function casper_preprocess_page(&$variables, &$node){
+    _casper_preprocess_front_page($variables);
+    _casper_images($variables);
+}
+/**
+ * Implements hook_preprocess_views_view_fields
+ */
+function casper_preprocess_views_view_field(&$variables) {
+    $variables['output'] = $variables['field']->advancedRender($variables['row']);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function casper_form_system_theme_settings_alter(&$form, $form_state) {
+    _casper_theme_settings($form, $form_state);
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function casper_preprocess_field(&$variables) {
+  if (!isset($variables['title_attributes']['class'])) {
+    $variables['title_attributes']['class'] = array();
+  }
+  if (!isset($variables['content_attributes']['class'])) {
+    $variables['content_attributes']['class'] = array();
+  }
+  $variables['title_attributes']['class'][] = 'field-label';
+
+  // Convenience variables
+  $mode = $variables['element']['#view_mode'];
+  $classes = &$variables['attributes']['class'];
+  $content_classes = &$variables['content_attributes']['class'];
+  $item_classes = array();
+
+  // Global field classes
+  $classes[] = 'field-wrapper';
+  $content_classes[] = 'field-items';
+  $item_classes[] = 'field-item';
+
+  // Add specific classes to targeted fields
+  if(isset($field)) {
+    switch ($mode) {
+      // All teasers
+      case 'teaser':
+        switch ($field) {
+          // Teaser read more links
+          case 'node_link':
+            $item_classes[] = 'more-link';
+            break;
+          // Teaser descriptions
+          case 'body':
+          case 'field_description':
+            $item_classes[] = 'description';
+            break;
+        }
+      break;
+    }
+  }
+
+  // Apply odd or even classes along with our custom classes to each item
+  foreach ($variables['items'] as $delta => $item) {
+    $item_classes[] = $delta % 2 ? 'odd' : 'even';
+    $variables['item_attributes'][$delta]['class'] = $item_classes;
+  }
+
+  // Add class to a specific fields across content types.
+  switch ($variables['element']['#field_name']) {
+    case 'body':
+      $classes = array('body');
+      break;
+
+    case 'field_summary':
+      $classes[] = 'text-teaser';
+      break;
+
+    case 'field_link':
+    case 'field_date':
+      // Replace classes entirely, instead of adding extra.
+    $classes = array('text-content');
+      break;
+
+    case 'field_image':
+      // Replace classes entirely, instead of adding extra.
+      $classes = array('image');
+      break;
+
+    default:
+      break;
+  }
+
+  // Add classes to body based on content type and view mode.
+  if ($variables['element']['#field_name'] == 'body') {
+    // Add classes to other content types with view mode 'teaser';
+    if ($variables['element']['#view_mode'] == 'teaser') {
+      $classes[] = 'text-secondary';
+    }
+    // The rest is text-content.
+    else {
+      $classes[] = 'field';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_html().
+ *
+ * Adds additional classes
+ */
+function casper_preprocess_html(&$variables) {
+  /* @var Drupal\Core\Language\LanguageInterface */
+  $language = \Drupal::languageManager()->getCurrentLanguage();
+  $site_language = $language->getId();
+  $site_language_direction = $language->getDirection();
+  $request = \Drupal::request();
+
+  // Clean up the lang attributes
+ // $variables['html_attributes'] = 'lang="' . $site_language . '" dir="' . $site_language_direction . '"';
+
+  // Add language body class.
+  $variables['attributes']['class'][] = 'lang-' . $site_language;
+
+  // Classes for body element. Allows advanced theming based on context
+  $is_front_page = \Drupal::service('path.matcher')->isFrontPage();
+  if (!$is_front_page) {
+    $path = trim($request->getRequestUri(), '/');
+    // Add unique class for each website section.
+    $arg = explode('/', $path);
+    $section = $arg[0];
+    if ($arg[0] == 'node' && isset($arg[1])) {
+      if ($arg[1] == 'add') {
+        $section = 'node-add';
+      }
+      elseif (isset($arg[2]) && is_numeric($arg[1]) && ($arg[2] == 'edit' || $arg[2] == 'delete')) {
+        $section = 'node-' . $arg[2];
+      }
+    }
+    $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::getClass('section-' . $section);
+  }
+
+  // Store the menu item since it has some useful information.
+  if ($request->attributes->get('view_id')) {
+    $variables['attributes']['class'][] = 'views-page';
+  }
+  elseif ($request->attributes->get('panel')) {
+    $variables['attributes']['class'][] = 'panels-page';
+  }
+}
+
+/**
+ * Custom variables that holds the information about casper new theme settings fields.
+ * TODO: We need to move this into a class to make OOP.
+ * TODO: We need to provide default values.
+ * @param $form
+ * @param $form_state
+ */
+function _casper_theme_settings(&$form, $form_state){
+    $form['theme_extra'] = array(
+        '#type' => 'fieldset',
+        '#title' => 'Casper Configuration',
+        '#collapsible' => TRUE,
+        '#collapsed' => TRUE,
+        '#weight' => -10,
+    );
+
+    $fids = theme_get_setting('front_page_background_image' , 'casper');
+    $background_fid = (!empty($fids) && file_load($fids[0])) ? $fids : '';
+    $form['theme_extra']['front_page_background_image'] = array(
+        '#type' => 'managed_file',
+        '#title' => 'Front Page Background Image',
+        '#description' => 'Add background image for the front page',
+        '#required' => FALSE,
+        '#weight' => -4,
+        '#upload_location' => file_default_scheme() . '://theme/backgrounds/',
+        '#default_value' => $background_fid,
+        '#upload_validators' => array(
+            'file_validate_extensions' => array('gif png jpg jpeg'),
+        ),
+    );
+
+    $fids = theme_get_setting('website_logo' , 'casper');
+    $web_logo_fid = (!empty($fids) && file_load($fids[0])) ? $fids : '';
+    $form['theme_extra']['website_logo'] = array(
+        '#type' => 'managed_file',
+        '#title' => 'Website Logo',
+        '#required' => FALSE,
+        '#weight' => -4,
+        '#upload_location' => file_default_scheme() . '://theme/backgrounds/',
+        '#default_value' => $web_logo_fid,
+        '#upload_validators' => array(
+            'file_validate_extensions' => array('gif png jpg jpeg'),
+        ),
+    );
+    $form['theme_extra']['front_page_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Front Page Title'),
+        '#default_value' => theme_get_setting('front_page_title'),
+        '#weight' => -6,
+    );
+
+    $form['theme_extra']['front_page_sub_heading'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Sub Title'),
+        '#default_value' => theme_get_setting('front_page_sub_heading'),
+        //'#description' => t('Front Page Title'), // TODO: Add a description.
+        '#weight' => -5,
+    );
+    // Perform our custom submit before system submit
+    $form['#submit'][] = array('Drupal\casper\Form\CasperCallbacks', 'submitSettings');
+
+}
+
+
+/**
+ *  User information for the bottom of article page.
+ *
+ * @param $variables
+ */
+function _casper_preprocess_dump(&$variables) {
+    $node = $variables['node'];
+        // Full Name
+        $variables['field_full_name'] = $node->getOwner()->field_full_name->value;
+        // Bio
+        $variables['field_bio'] = $node->getOwner()->field_bio->value;
+        // Social Media
+        $variables['field_facebook'] = $node->getOwner()->field_facebook->uri;
+        $variables['field_google_'] = $node->getOwner()->field_google_->uri;
+        $variables['field_twitter'] = $node->getOwner()->field_twitter->uri;
+
+        // Website
+        $variables['field_website'] = $node->getOwner()->field_website->uri;
+
+        $themePath = drupal_get_path(theme, casper);
+        $variables['field_profile_picture'] = '/' . $themePath . '/image/avatar.png';
+        if ($profilePicture = $node->getOwner()->field_profile_picture->entity) {
+            $variables['field_profile_picture'] = $profilePicture->url();
+        }
+}
+
+/**
+ * Front Page text.
+ * @param $variables
+ */
+function _casper_preprocess_front_page(&$variables){
+    if($variables['is_front'] == TRUE){
+        $variables['front_page_title'] = theme_get_setting('front_page_title', 'casper');
+        $variables['front_page_sub_heading'] = theme_get_setting('front_page_sub_heading', 'casper');
+    }
+}
+function _casper_images(&$variables){
+// Make sure that this only is been load in the front page.
+  if($variables['is_front'] == TRUE){
+    $fid = theme_get_setting('front_page_background_image', 'casper');
+    $file = NULL;
+      if($fid){
+        // Load the file.
+        $file = File::load($fid[0]);
+      }
+    // Adding a validation otherwise is going to give you a white screen.
+    if(!empty($file)) {
+      // Generate the URL.
+      $variables['front_page_background_image'] = $file->url();
+    }
+  }
+  $fid = theme_get_setting('website_logo', 'casper');
+  $file = NULL;
+  if($fid){
+    // Load the file.
+    $file = File::load($fid[0]);
+  }
+  // Adding a validation otherwise is going to give you a white screen.
+  if(!empty($file)){
+    // Generate the URL.
+    $variables['website_logo'] = $file->url();
+  }
+}
+//
+///**
+// * Implements hook_install().
+// *
+// *  We need to wait until this https://www.drupal.org/node/2652542 is been solve.
+// *
+// *  This will disable the frontpage view.
+// */
+//function casper_install(){
+//    $view_id = 'frontpage';
+//    $view = \Drupal::entityManager()->getStorage('view')->load($view_id);
+//    $view->setStatus(FALSE);
+//    $view->save();
+//
+//// We need to added to override the configuration in here.
+////http://drupal.stackexchange.com/questions/187476/how-to-override-configuration-from-a-file
+//}
+//
+///**
+// * Implements hook_uninstall().
+// *
+// *  We need to wait until this https://www.drupal.org/node/2652542 is been solve.
+// *
+// *  This will enable the frontpage vieew.
+// */
+//function casper_uninstall(){
+//    $view_id = 'frontpage';
+//    $view = \Drupal::entityManager()->getStorage('view')->load($view_id);
+//    $view->setStatus(TRUE);
+//    $view->save();
+//
+//    // We need to add the ability of removing the override configuration.
+//}

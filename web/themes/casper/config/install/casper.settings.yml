@@ -1,0 +1,19 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+favicon:
+  use_default: 1
+  path: ''
+front_page_background_image:
+  - '22'
+front_page_title: 'Darryl Norris'
+front_page_sub_heading: 'Drupal Expert, PHP  and more....'
+website_logo:
+  - '21'
+_core:
+  default_config_hash: FN_eoqM9mWhyxohZ1bBz4nOg4FUGioma9VUHBoczaGs
+logo:
+  use_default: 1
+  path: ''

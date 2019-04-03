@@ -1,0 +1,20 @@
+uuid: 77e7c927-e99f-4572-9007-7f72d4f2cbac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - casper
+_core:
+  default_config_hash: N1pMKOx--jUrzpd0F5tIG5xJFkXWB_3VhBvhswCdSrc
+id: casper_local_actions
+theme: casper
+region: content
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

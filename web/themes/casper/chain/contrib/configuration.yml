@@ -1,0 +1,17 @@
+# Chain Configuration
+# This will override the Manage Form and Manage Display.
+
+commands:
+  - command: config:override
+    arguments:
+        config-name: views.view.frontpage
+        key: status
+        value: 0
+  - command: config:import:single
+    arguments:
+        config-name: core.entity_view_display.user.user.default
+        input-file: themes/contrib/casper/config/override/core.entity_view_display.user.user.default.yml
+  - command: config:import:single
+    arguments:
+        config-name: core.entity_form_display.user.user.default
+        input-file: themes/contrib/casper/config/override/core.entity_form_display.user.user.default.yml

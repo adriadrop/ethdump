@@ -1,0 +1,46 @@
+name: Casper
+type: theme
+description: 'The default personal blogging theme for Ghost.'
+# core: 8.x
+base theme: false
+libraries:
+  - casper/casper
+regions:
+  menu: 'Primary menu'
+  highlighted: Highlighted
+  content: Content
+  footer: 'Footer'
+
+# -- CSS Remove ----------------------------------------------------------------
+# Drupal provide some css files here you can remove em.
+stylesheets-remove:
+  # - @classy/css/layout.css
+  # thank you drupal but we will add these in ourself :)
+  - core/modules/system/css/components/fieldgroup.module.css
+  - core/modules/system/css/components/container-inline.module.css
+  - core/modules/system/css/components/clearfix.module.css
+  - core/modules/system/css/components/item-list.module.css
+  - core/modules/system/css/components/nowrap.module.css
+  - core/modules/system/css/components/position-container.module.css
+  - core/modules/system/css/components/reset-appearance.module.css
+  - core/modules/system/css/components/resize.module.css
+  - core/modules/system/css/components/sticky-header.module.css
+  - core/modules/system/css/components/tabledrag.module.css
+  - core/modules/system/css/components/tree-child.module.css
+  - core/modules/system/css/components/tablesort.module.css
+  - core/modules/views/css/views.module.css
+# more stuff default loaded, you should write this into your own css, so you
+# dont destroy default functionality
+#  - core/modules/system/css/components/ajax-progress.module.css
+#  - core/modules/system/css/components/align.module.css
+#  - core/modules/system/css/components/autocomplete-loading.module.css
+#  - core/modules/system/css/components/details.module.css
+#  - core/modules/system/css/components/hidden.module.css
+#  - core/modules/system/css/components/js.module.css
+#  - core/modules/system/css/components/progress.module.css
+
+# Information added by Drupal.org packaging script on 2016-02-14
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'casper'
+datestamp: 1455444540

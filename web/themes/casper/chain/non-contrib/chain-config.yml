@@ -1,0 +1,42 @@
+# This is going to be a file to update the configuration.
+# Since Drupal 8.0.x does not support hook_install
+# Waiting on https://github.com/hechoendrupal/DrupalConsole/issues/1707
+# We should implement also the chain
+
+commands:
+  - command: config:export:single
+    arguments:
+        config-name:
+        - block.block.casper_branding
+        - block.block.casper_breadcrumbs
+        - block.block.casper_content
+        - block.block.casper_footer
+        - block.block.casper_help
+        - block.block.casper_local_actions
+        - block.block.casper_local_tasks
+        - block.block.casper_main_menu
+        - block.block.casper_messages
+        - block.block.casper_page_title
+        - block.block.casper_powered
+        - block.block.casper_search
+        - block.block.casper_tools
+        - casper.settings
+        - field.field.user.user.field_bio
+        - field.field.user.user.field_facebook
+        - field.field.user.user.field_full_name
+        - field.field.user.user.field_google_
+        - field.field.user.user.field_header_user_picture
+        - field.field.user.user.field_profile_picture
+        - field.field.user.user.field_twitter
+        - field.field.user.user.field_website
+        - field.storage.user.field_bio
+        - field.storage.user.field_facebook
+        - field.storage.user.field_full_name
+        - field.storage.user.field_google_
+        - field.storage.user.field_header_user_picture
+        - field.storage.user.field_profile_picture
+        - field.storage.user.field_twitter
+        - field.storage.user.field_website
+        - views.view.frontpagecasper
+    options:
+        directory: themes/casper/config/install

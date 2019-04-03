@@ -1,0 +1,22 @@
+uuid: 74d4d86e-7aae-49d6-9836-549f1ea78516
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - casper
+_core:
+  default_config_hash: 7eyPCmcfgnPu-ms41524paCXL8AgHMFhA58MNQNVsTY
+id: casper_search
+theme: casper
+region: '-1'
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

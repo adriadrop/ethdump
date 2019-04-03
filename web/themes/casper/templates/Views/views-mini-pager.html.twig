@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a views mini-pager.
+ *
+ * Available variables:
+ * - items: List of pager items.
+ *
+ * @see template_preprocess_views_mini_pager()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if items.previous or items.next %}
+<nav class="pagination" role="navigation">
+            {% if items.previous %}
+                {% if items.current %}
+                    {% trans %}
+                    <span class="page-number">Page {{ items.current }}</span>
+                    {% endtrans %}
+                {% endif %}
+                    <a class="newer-posts" href="{{ items.previous.href }}"><span aria-hidden="true">←</span>{{ items.previous.text|default('‹‹'|t) }}</a>
+            {% endif %}
+            {% if items.next %}
+                {% if items.current %}
+                    {% if items.previous %}
+                    {% else %}
+                        {% trans %}
+                        <span class="page-number">Page {{ items.current }}</span>
+                        {% endtrans %}
+                    {% endif %}
+                {% endif %}
+                <a class="older-posts" href="{{ items.next.href }}">{{ items.next.text|default('››'|t) }}<span aria-hidden="true">→</span></a>
+            {% endif %}
+    </nav>
+{% endif %}

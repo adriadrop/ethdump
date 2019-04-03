@@ -1,0 +1,25 @@
+uuid: e18d4010-d7ab-491d-8a3f-631419ef49be
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: ITXJhgrPlLxpM8J5RokwZm4RiaR2TxS5rk2F13BjH4s
+id: casper_branding
+theme: casper
+region: '-1'
+weight: -2
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

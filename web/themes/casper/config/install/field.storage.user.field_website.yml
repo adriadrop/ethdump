@@ -1,0 +1,21 @@
+uuid: a9e64cfc-68f5-4a5b-9a00-fd4ce6b627d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - user
+_core:
+  default_config_hash: OkKGR7qwq5y8-MgcBgoHCKLcwG3Q5JjhO3egsmrLNuc
+id: user.field_website
+field_name: field_website
+entity_type: user
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

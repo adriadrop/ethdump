@@ -1,0 +1,22 @@
+uuid: ed9b87db-e636-4c3e-a663-990e0fcf7f23
+langcode: en
+status: true
+dependencies:
+  theme:
+    - casper
+_core:
+  default_config_hash: RH3QCKJ4JPM1PbzzuQqT90BAUArZxpji7P8eCY9jjP8
+id: casper_local_tasks
+theme: casper
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

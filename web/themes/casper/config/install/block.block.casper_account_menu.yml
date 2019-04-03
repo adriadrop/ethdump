@@ -1,0 +1,26 @@
+uuid: 84e0f861-a7fc-4886-b800-a35e273e6eb1
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: 0Upww5kulAU4GHE8D_Gm28KDNaS7YwADojhZPYWJ8Oc
+id: casper_account_menu
+theme: casper
+region: '-1'
+weight: 1
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

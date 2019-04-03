@@ -1,0 +1,26 @@
+uuid: 22b79c7b-f4f1-4e40-a100-ffd7fc484bab
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: azz4jvTumy7Np81Kg_-jCKmaL9_D9hE_nbY-xWEyFt4
+id: casper_footer
+theme: casper
+region: '-1'
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

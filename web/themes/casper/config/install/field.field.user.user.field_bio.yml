@@ -1,0 +1,22 @@
+uuid: 2b058986-4219-49b1-a00f-1576cad8f29e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_bio
+  module:
+    - user
+_core:
+  default_config_hash: 9k_Ph2E02nHrXuLogUuiAo1fJkuS_q6j3iIPq8BUw0U
+id: user.user.field_bio
+field_name: field_bio
+entity_type: user
+bundle: user
+label: Bio
+description: 'Introduce yourself with some basic biography.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

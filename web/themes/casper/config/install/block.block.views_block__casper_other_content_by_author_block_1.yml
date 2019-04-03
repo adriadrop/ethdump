@@ -1,0 +1,30 @@
+uuid: 3b12b23e-dc6d-48f5-b800-c4a368559072
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.casper_other_content_by_author
+  module:
+    - system
+    - views
+  theme:
+    - casper
+id: views_block__casper_other_content_bblock.block.views_block__casper_other_content_by_author_block_1.ymly_author_block_1
+theme: casper
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:casper_other_content_by_author-block_1'
+settings:
+  id: 'views_block:casper_other_content_by_author-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user\r\n/user/*"
+    negate: false
+    context_mapping: {  }

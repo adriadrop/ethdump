@@ -1,0 +1,15 @@
+casper:
+#  version: 1.x
+  css:
+    theme:
+      vendor/casper/css/screen.css: {}
+      assets/css/casper-custom.css: {}
+  js:
+    vendor/casper/js/index.js: {}
+    vendor/casper/js/jquery.fitvids.js: {}
+    assets/js/casper-custom.js: {}
+  dependencies:
+    - core/jquery
+# Move assets to his custom library.
+
+
