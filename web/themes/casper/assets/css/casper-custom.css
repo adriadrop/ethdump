@@ -175,19 +175,19 @@ input[type="submit"]:hover {
     border-radius: 4px;
     box-shadow: none;
 }
-.search-block-form form div, #block-casper-content form .js-form-type-search, #block-casper-content form input[type="submit"]{
+.search-api-page-block-form form div, #block-casper-content form .js-form-type-search, #block-casper-content form input[type="submit"]{
     display: inline-block;
 }
-.search-block-form form input[type="search"], #block-casper-content form input[type="search"]{
+.search-api-page-block-form form input[type="search"], #block-casper-content form input[type="search"]{
     padding: 15px 10px;
     font-size: 20px;
     width: 96%;
 }
-.search-block-form form input[type="submit"], #block-casper-content form input[type="submit"]{
+.search-api-page-block-form form input[type="submit"], #block-casper-content form input[type="submit"]{
     padding: 15px 5px;
     width: 100px;
     font-size: 20px;
 }
-.search-block-form .js-form-type-search, #block-casper-content .js-form-type-search{
+.search-api-page-block-form .js-form-type-search, #block-casper-content .js-form-type-search{
     width: 85%;
 }
