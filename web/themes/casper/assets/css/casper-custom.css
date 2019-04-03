@@ -175,7 +175,7 @@ input[type="submit"]:hover {
     border-radius: 4px;
     box-shadow: none;
 }
-.search-api-page-block-form form div, #block-casper-content form .js-form-type-search, #block-casper-content form input[type="submit"]{
+.search-api-page-block-form form div, #block-casper-content form .js-form-type-search, #block-casper-content .form-actions{
     display: inline-block;
 }
 .search-api-page-block-form form input[type="search"], #block-casper-content form input[type="search"]{
