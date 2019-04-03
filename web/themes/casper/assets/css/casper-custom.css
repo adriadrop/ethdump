@@ -191,3 +191,8 @@ input[type="submit"]:hover {
 .search-api-page-block-form .js-form-type-search, #block-casper-content .js-form-type-search{
     width: 85%;
 }
+.search-api-page-block-form form, #block-casper-local-tasks ul{
+    width: 80%;
+    max-width: 710px;
+    margin: 4rem auto;
+}
