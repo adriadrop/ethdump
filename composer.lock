@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66a248dab8dd2f21e30b840f5b00be5a",
+    "content-hash": "48ec42f7aac8bb06096a823b2cfae40b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2957,7 +2957,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/devel.git",
-                "reference": "00fa2de6f9f70ee4b4c32ee0c8021a0596dd565e"
+                "reference": "fb28836d6c08e4ea4039e481e30fbbe86e3c82a9"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2969,8 +2969,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0+8-dev",
-                    "datestamp": "1553621880",
+                    "version": "8.x-2.0+12-dev",
+                    "datestamp": "1554296885",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3029,7 +3029,7 @@
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2019-03-26T17:35:41+00:00"
+            "time": "2019-04-03T23:57:21+00:00"
         },
         {
             "name": "drupal/disqus",
@@ -3096,7 +3096,7 @@
             "description": ".",
             "homepage": "http://drupal.org/project/disqus",
             "support": {
-                "source": "http://cgit.drupalcode.org/disqus"
+                "source": "https://git.drupalcode.org/project/disqus"
             }
         },
         {
@@ -3194,6 +3194,10 @@
                 {
                     "name": "Pol",
                     "homepage": "https://www.drupal.org/user/47194"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
                 },
                 {
                     "name": "rjacobs",
@@ -3294,7 +3298,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1536407884",
+                    "datestamp": "1554239887",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3326,7 +3330,7 @@
             "description": "Provides a mechanism for modules to automatically generate aliases for the content they manage.",
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
-                "source": "http://cgit.drupalcode.org/pathauto"
+                "source": "https://git.drupalcode.org/project/pathauto"
             }
         },
         {
@@ -3508,7 +3512,7 @@
             "description": "Create search pages using Search API indexes.",
             "homepage": "https://www.drupal.org/project/search_api_page",
             "support": {
-                "source": "http://cgit.drupalcode.org/search_api_page"
+                "source": "https://git.drupalcode.org/project/search_api_page"
             }
         },
         {
@@ -3666,8 +3670,66 @@
             "description": "Provides a user interface for the Token API and some missing core tokens.",
             "homepage": "https://www.drupal.org/project/token",
             "support": {
-                "source": "http://cgit.drupalcode.org/token"
+                "source": "https://git.drupalcode.org/project/token"
             }
+        },
+        {
+            "name": "drupal/votingapi",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/votingapi.git",
+                "reference": "95f7cf2db229d5649a2787daf55375d7731e2f8e"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.0-beta1+3-dev",
+                    "datestamp": "1551640384",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "eaton",
+                    "homepage": "https://www.drupal.org/user/16496"
+                },
+                {
+                    "name": "pedrorocha",
+                    "homepage": "https://www.drupal.org/user/218937"
+                },
+                {
+                    "name": "pifagor",
+                    "homepage": "https://www.drupal.org/user/2375692"
+                },
+                {
+                    "name": "torotil",
+                    "homepage": "https://www.drupal.org/user/865256"
+                }
+            ],
+            "description": "Voting API",
+            "homepage": "http://drupal.org/project/votingapi",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/votingapi",
+                "issues": "http://drupal.org/project/issues/votingapi"
+            },
+            "time": "2019-03-03T19:11:45+00:00"
         },
         {
             "name": "drush/drush",
@@ -9361,7 +9423,8 @@
         "drupal/disqus": 5,
         "drupal/libraries": 15,
         "drupal/search_api": 20,
-        "drupal/search_api_page": 15
+        "drupal/search_api_page": 15,
+        "drupal/votingapi": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

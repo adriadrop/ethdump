@@ -38,6 +38,7 @@
         "drupal/search_api_page": "^1.0@alpha",
         "drupal/search_api_solr": "^2.6",
         "drupal/token": "^1.5",
+        "drupal/votingapi": "3.x-dev",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
