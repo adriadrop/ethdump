@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48ec42f7aac8bb06096a823b2cfae40b",
+    "content-hash": "45fd8703fb6f400fb7b1b35c1262759f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -69,6 +69,15 @@
                 "zip"
             ],
             "time": "2016-11-03T16:10:31+00:00"
+        },
+        {
+            "name": "antennaio/jquery-bar-rating",
+            "version": "1.2.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/antennaio/jquery-bar-rating/archive/v1.2.2.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "asm89/stack-cors",
@@ -3730,6 +3739,66 @@
                 "issues": "http://drupal.org/project/issues/votingapi"
             },
             "time": "2019-03-03T19:11:45+00:00"
+        },
+        {
+            "name": "drupal/votingapi_widgets",
+            "version": "1.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/votingapi_widgets.git",
+                "reference": "8.x-1.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/votingapi_widgets-8.x-1.0-alpha3.zip",
+                "reference": "8.x-1.0-alpha3",
+                "shasum": "a8654448561e001512fe21f42d649041e0a57a43"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/votingapi": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha3",
+                    "datestamp": "1524826980",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Andre-B",
+                    "homepage": "https://www.drupal.org/user/1772408"
+                },
+                {
+                    "name": "Erik Seifert",
+                    "homepage": "https://www.drupal.org/user/161429"
+                },
+                {
+                    "name": "Merlin Tribukait",
+                    "homepage": "https://www.drupal.org/user/3217075"
+                }
+            ],
+            "description": "Voting API Widgets",
+            "homepage": "https://www.drupal.org/project/votingapi_widgets",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/votingapi_widgets",
+                "issues": "https://www.drupal.org/project/issues/votingapi_widgets"
+            }
         },
         {
             "name": "drush/drush",
@@ -9424,7 +9493,8 @@
         "drupal/libraries": 15,
         "drupal/search_api": 20,
         "drupal/search_api_page": 15,
-        "drupal/votingapi": 20
+        "drupal/votingapi": 20,
+        "drupal/votingapi_widgets": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
