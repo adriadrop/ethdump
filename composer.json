@@ -51,8 +51,6 @@
         "drupal/search_api_page": "^1.0@beta",
         "drupal/search_api_solr": ">=4.0",
         "drupal/token": "^1.5",
-        "drupal/votingapi": "^3.0@beta",
-        "drupal/votingapi_widgets": "^1.0@alpha",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
