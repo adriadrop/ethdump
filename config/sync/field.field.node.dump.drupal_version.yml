@@ -1,0 +1,32 @@
+uuid: 95db4325-059f-438f-8ac3-99bba094b44a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.drupal_version
+    - node.type.dump
+    - taxonomy.vocabulary.drupal_version
+  content:
+    - 'taxonomy_term:drupal_version:8ee17e08-36ad-4574-b59d-12dcc257667a'
+id: node.dump.drupal_version
+field_name: drupal_version
+entity_type: node
+bundle: dump
+label: 'Drupal Version'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 8ee17e08-36ad-4574-b59d-12dcc257667a
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      drupal_version: drupal_version
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

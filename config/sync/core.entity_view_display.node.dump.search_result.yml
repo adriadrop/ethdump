@@ -1,0 +1,39 @@
+uuid: 1f3c6a9d-db01-46b5-b43c-31c5d474df91
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.dump.body
+    - field.field.node.dump.category
+    - field.field.node.dump.drupal_version
+    - field.field.node.dump.field_disqus
+    - field.field.node.dump.field_files
+    - node.type.dump
+  module:
+    - file
+    - user
+id: node.dump.search_result
+targetEntityType: node
+bundle: dump
+mode: search_result
+content:
+  field_files:
+    label: above
+    weight: 31
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  category: true
+  drupal_version: true
+  field_disqus: true
+  langcode: true

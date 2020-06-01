@@ -1,0 +1,23 @@
+uuid: fe886bbd-d3ad-47c0-a354-c766e13c19be
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.drupal_version_facet
+  module:
+    - facets
+  theme:
+    - casper
+id: drupalversionfacet
+theme: casper
+region: content
+weight: -7
+provider: null
+plugin: 'facet_block:drupal_version_facet'
+settings:
+  id: 'facet_block:drupal_version_facet'
+  label: 'Drupal Version Facet'
+  provider: facets
+  label_display: visible
+  block_id: drupalversionfacet
+visibility: {  }

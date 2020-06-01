@@ -1,0 +1,20 @@
+uuid: 4d653c35-16e2-42a9-bc35-16c6f658cf0c
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - zen
+id: system_1
+theme: zen
+region: ''
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: ''
+  provider: system
+  label_display: '0'
+visibility: {  }

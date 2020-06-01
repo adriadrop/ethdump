@@ -1,0 +1,24 @@
+uuid: 3cc5d745-8ce9-4c22-9560-d37431037210
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - acquia_marina
+id: user_5
+theme: acquia_marina
+region: ''
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: ''
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

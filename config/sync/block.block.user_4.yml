@@ -1,0 +1,20 @@
+uuid: 28866901-d7d6-4685-b6b0-ee77a7f3b8b1
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - acquia_marina
+id: user_4
+theme: acquia_marina
+region: ''
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: ''
+  provider: user
+  label_display: '0'
+visibility: {  }

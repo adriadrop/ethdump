@@ -1,0 +1,12 @@
+uuid: 842fc937-2da6-4a77-97e6-47d69a660e44
+langcode: en
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+recipients:
+  - marko@arabba.hr
+reply: 'Thank you!'
+weight: 0
+message: null
+redirect: null

@@ -1,0 +1,20 @@
+uuid: 5b1e1a7d-a8e3-4096-a4fe-4e6600bf87e8
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - acquia_marina
+id: system_2
+theme: acquia_marina
+region: ''
+weight: -9
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: ''
+  provider: system
+  label_display: '0'
+visibility: {  }

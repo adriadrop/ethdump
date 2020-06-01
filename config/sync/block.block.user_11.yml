@@ -1,0 +1,24 @@
+uuid: 9418b37c-3e0b-4474-aba5-556cedd21602
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - my_theme
+id: user_11
+theme: my_theme
+region: ''
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: ''
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

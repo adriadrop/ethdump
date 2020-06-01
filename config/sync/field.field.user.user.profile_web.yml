@@ -1,0 +1,23 @@
+uuid: 8f826cfc-0148-4332-9c10-7b028ff1a32d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.profile_web
+  module:
+    - link
+    - user
+id: user.user.profile_web
+field_name: profile_web
+entity_type: user
+bundle: user
+label: Website
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

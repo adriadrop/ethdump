@@ -1,0 +1,27 @@
+uuid: 5f38ef0c-ec70-4300-b105-e786d8259185
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_files
+    - node.type.dump
+  module:
+    - file
+id: node.dump.field_files
+field_name: field_files
+entity_type: node
+bundle: dump
+label: Files
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: dumps
+  file_extensions: 'jpg gif png pdf doc docx zip mysql gz'
+  max_filesize: 5MB
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
