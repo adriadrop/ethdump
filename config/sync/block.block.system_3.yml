@@ -1,0 +1,20 @@
+uuid: ada0158d-b111-4905-80f1-602418c18a8e
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - fusion_core
+id: system_3
+theme: fusion_core
+region: ''
+weight: -9
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: ''
+  provider: system
+  label_display: '0'
+visibility: {  }

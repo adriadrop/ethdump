@@ -1,0 +1,39 @@
+uuid: 5300199d-bde0-451f-aaba-c977d60d69f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.dump.body
+    - field.field.node.dump.category
+    - field.field.node.dump.drupal_version
+    - field.field.node.dump.field_disqus
+    - field.field.node.dump.field_files
+    - node.type.dump
+  module:
+    - text
+    - user
+id: node.dump.teaser
+targetEntityType: node
+bundle: dump
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 0
+    settings:
+      trim_length: 400
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  category: true
+  drupal_version: true
+  field_disqus: true
+  field_files: true
+  langcode: true

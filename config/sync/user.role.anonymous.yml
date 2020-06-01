@@ -1,0 +1,23 @@
+uuid: 17f593ad-fda2-4dd8-b6c2-33c0a7db960c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use realname'
+  - 'use text format filtered_html'
+  - 'view disqus comments'
+  - 'view search api pages'
+  - 'vote on node:dump:field_is_useful'
+  - 'vote on node:dump:field_test'

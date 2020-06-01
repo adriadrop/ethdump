@@ -1,0 +1,95 @@
+uuid: 39359b38-c664-4139-a03e-26056e25e25d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+  module:
+    - ckeditor
+format: filtered_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - CodeSnippet
+            - Source
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+    wordcount:
+      enable: 0
+      show_paragraphs: 0
+      show_word_count: 0
+      show_char_count: 0
+      count_spaces: 0
+      count_html: 0
+      max_words: '-1'
+      max_chars: '-1'
+    codesnippet:
+      highlight_style: github
+      highlight_languages:
+        css: css
+        json: json
+        javascript: javascript
+        less: less
+        nginx: nginx
+        php: php
+        scss: scss
+        sql: sql
+        twig: twig
+        xml: xml
+        yaml: yaml
+        apache: 0
+        bash: 0
+        coffeescript: 0
+        dart: 0
+        dockerfile: 0
+        dust: 0
+        gherkin: 0
+        go: 0
+        haml: 0
+        handlebars: 0
+        ini: 0
+        java: 0
+        makefile: 0
+        markdown: 0
+        perl: 0
+        powershell: 0
+        puppet: 0
+        python: 0
+        ruby: 0
+        typescript: 0
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

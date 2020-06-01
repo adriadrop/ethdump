@@ -1,0 +1,25 @@
+uuid: 4138a3a2-8245-4c41-b3d0-19d49eda3c89
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a2195392-2863-4e58-b629-cf713d6784b1'
+  module:
+    - block_content
+  theme:
+    - casper
+id: home
+theme: casper
+region: footer
+weight: -7
+provider: null
+plugin: 'block_content:a2195392-2863-4e58-b629-cf713d6784b1'
+settings:
+  id: 'block_content:a2195392-2863-4e58-b629-cf713d6784b1'
+  label: Home
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 357afa3a-fc27-483f-bcda-aded74d2d1c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dump
+id: node.dump.status
+field_name: status
+entity_type: node
+bundle: dump
+label: 'Publishing status'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

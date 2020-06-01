@@ -1,0 +1,20 @@
+uuid: f4bdb82d-9b6d-4639-9d03-e89fb2de61a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - writer
+id: writer_user_8
+theme: writer
+region: content
+weight: -12
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: ''
+  provider: user
+  label_display: '0'
+visibility: {  }

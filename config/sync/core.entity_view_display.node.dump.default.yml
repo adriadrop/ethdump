@@ -1,0 +1,66 @@
+uuid: 8c0e5c59-9071-4e97-bde4-cfd081053119
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dump.body
+    - field.field.node.dump.category
+    - field.field.node.dump.drupal_version
+    - field.field.node.dump.field_disqus
+    - field.field.node.dump.field_files
+    - node.type.dump
+  module:
+    - disqus
+    - file
+    - text
+    - user
+id: node.dump.default
+targetEntityType: node
+bundle: dump
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  category:
+    label: hidden
+    type: entity_reference_label
+    weight: 2
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  drupal_version:
+    label: hidden
+    type: entity_reference_label
+    weight: 1
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_disqus:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: disqus_comment
+    region: content
+  field_files:
+    type: file_default
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+  links:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

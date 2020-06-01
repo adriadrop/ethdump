@@ -1,0 +1,22 @@
+uuid: e87f5878-f294-484b-b259-89dda143505a
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - casper
+_core:
+  default_config_hash: z31cjiSX7vg3Y8LB6gks7auf1Uilf3rMuXhsbkzQj4Y
+id: casper_help
+theme: casper
+region: menu
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

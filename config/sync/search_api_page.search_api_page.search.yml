@@ -1,0 +1,19 @@
+uuid: 5750450f-b429-47cf-9eda-5e0ea55d34d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.content
+id: search
+label: 'Search page'
+path: /search/solr
+clean_url: true
+show_all_when_no_keys: false
+index: content
+limit: 10
+searched_fields:
+  body: body
+  title: title
+style: search_results
+view_mode_configuration: {  }
+show_search_form: true

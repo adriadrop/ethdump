@@ -1,0 +1,22 @@
+uuid: d226a1e4-2a27-4ae4-af64-cad3243f626f
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - writer
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: writer_help
+theme: writer
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

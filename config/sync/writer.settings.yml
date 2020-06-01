@@ -1,0 +1,16 @@
+features:
+  logo: false
+  name: true
+  slogan: false
+  favicon: 1
+  node_user_picture: 0
+  comment_user_picture: 0
+  comment_user_verification: 0
+code_snippets: night
+content_width: '630'
+_core:
+  default_config_hash: cr0vcrCvlUcC98Qrk1y4BcETUHZpQFM35oRmhvz4VJ4
+logo:
+  use_default: 1
+favicon:
+  use_default: 1

@@ -1,0 +1,22 @@
+uuid: 980d7d94-df72-4906-8704-4b2b9d1e754a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - casper
+_core:
+  default_config_hash: sOARLOPzmc7DxcILYcRQKznkBPlNJ3wNXH9pWrwhOAo
+id: casper_powered
+theme: casper
+region: footer
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }
