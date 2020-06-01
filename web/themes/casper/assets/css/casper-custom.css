@@ -175,23 +175,23 @@ input[type="submit"]:hover {
     border-radius: 4px;
     box-shadow: none;
 }
-.search-api-page-block-form form div, #block-casper-content form .js-form-type-search, #block-casper-content .form-actions{
+.search-api-page-block-form-search form div, #block-casper-content form .js-form-type-search, #block-casper-content .form-actions{
     display: inline-block;
 }
-.search-api-page-block-form form input[type="search"], #block-casper-content form input[type="search"], .search-api-page-block-form form input[type="text"], #block-casper-content form input[type="text"]{
+.search-api-page-block-form-search form input[type="search"], #block-casper-content form input[type="search"], .search-api-page-block-form form input[type="text"], #block-casper-content form input[type="text"]{
     padding: 15px 10px;
     font-size: 20px;
     width: 96%;
 }
-.search-api-page-block-form form input[type="submit"], #block-casper-content form input[type="submit"]{
+.search-api-page-block-form-search form input[type="submit"], #block-casper-content form input[type="submit"]{
     padding: 15px 5px;
     width: 100px;
     font-size: 20px;
 }
-.search-api-page-block-form .js-form-type-search, .search-api-page-block-form .js-form-type-search-api-autocomplete, #block-casper-content .js-form-type-search, #block-casper-content .js-form-type-search-api-autocomplete{
+.search-api-page-block-form-search .js-form-type-search, .search-api-page-block-form-search .js-form-type-search-api-autocomplete, #block-casper-content .js-form-type-search, #block-casper-content .js-form-type-search-api-autocomplete{
     width: 85%;
 }
-.search-api-page-block-form form, #block-casper-local-tasks ul{
+.search-api-page-block-form-search form, #block-casper-local-tasks ul{
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
