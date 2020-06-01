@@ -1,6 +1,6 @@
 uuid: b4edef22-b59c-49c9-a993-97029cc4c0eb
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,7 +12,7 @@ _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: writer_main_menu
 theme: writer
-region: pre_header
+region: ''
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
@@ -23,4 +23,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 1
+  expand_all_items: false
 visibility: {  }

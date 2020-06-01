@@ -34,6 +34,9 @@ third_party_settings:
         fragsize: 0
     advanced:
       index_prefix: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
 id: content
 name: Content
 description: ''
@@ -58,7 +61,6 @@ field_settings:
         - field.storage.node.category
       module:
         - taxonomy
-        - taxonomy
   name_1:
     label: 'Drupal Version » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -69,7 +71,6 @@ field_settings:
         - field.storage.node.drupal_version
       module:
         - taxonomy
-        - taxonomy
   tid:
     label: 'Drupal Version » Taxonomy term » Term ID'
     datasource_id: 'entity:node'
@@ -79,7 +80,6 @@ field_settings:
       config:
         - field.storage.node.drupal_version
       module:
-        - taxonomy
         - taxonomy
   title:
     label: Title
@@ -99,18 +99,22 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  add_url: {  }
-  aggregated_field: {  }
-  highlight:
-    highlight: always
-    highlight_partial: false
-    excerpt: true
-    excerpt_length: 256
-    exclude_fields: {  }
-    prefix: '<strong>'
-    suffix: '</strong>'
+  ignore_character:
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    all_fields: false
     weights:
-      postprocess_query: 0
+      preprocess_index: -10
+      preprocess_query: -10
+  language_with_fallback: {  }
+  add_url: {  }
   html_filter:
     all_fields: false
     fields:
@@ -131,21 +135,18 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
-  ignore_character:
-    ignorable: '[''¿¡!?,.:;]'
-    ignorable_classes:
-      - Pc
-      - Pd
-      - Pe
-      - Pf
-      - Pi
-      - Po
-      - Ps
-    all_fields: false
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
+  aggregated_field: {  }
   rendered_item: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
   solr_date_range:
     weights:
       preprocess_index: 0
