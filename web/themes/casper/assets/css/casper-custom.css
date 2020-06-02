@@ -219,6 +219,7 @@ input[type="submit"]:hover {
     font-size: 2rem;
     color: #bbbdbc;
     text-align: center;
+    margin-bottom: 20px;
 }
 .view-post-tags{
     font-size: 12px;
