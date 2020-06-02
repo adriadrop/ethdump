@@ -175,10 +175,16 @@ input[type="submit"]:hover {
     border-radius: 4px;
     box-shadow: none;
 }
-.views-exposed-form form div, #block-casper-content form .js-form-type-search, #block-casper-content .form-actions{
+.views-exposed-form form div, #block-casper-content .form-actions{
     display: inline-block;
 }
-.views-exposed-form form input[type="search"], #block-casper-content form input[type="search"], .views-exposed-form form input[type="text"], #block-casper-content form input[type="text"]{
+.views-exposed-form form div.form-item-search-api-fulltext{
+    width:70%;
+}
+.views-exposed-form form div#edit-actions{
+    width:70%;
+}
+.views-exposed-form form input[type="search"], .views-exposed-form form input[type="text"], #block-casper-content form input[type="text"]{
     padding: 15px 10px;
     font-size: 20px;
     width: 96%;
@@ -188,7 +194,7 @@ input[type="submit"]:hover {
     width: 100px;
     font-size: 20px;
 }
-.views-exposed-form .js-form-type-search, .views-exposed-form .js-form-type-search-api-autocomplete, #block-casper-content .js-form-type-search, #block-casper-content .js-form-type-search-api-autocomplete{
+.views-exposed-form .js-form-type-search, .views-exposed-form .js-form-type-search-api-autocomplete{
     width: 85%;
 }
 .views-exposed-form form, #block-casper-local-tasks ul{
