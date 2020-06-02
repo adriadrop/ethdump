@@ -197,7 +197,7 @@ input[type="submit"]:hover {
 .views-exposed-form .js-form-type-search, .views-exposed-form .js-form-type-search-api-autocomplete{
     width: 85%;
 }
-.views-exposed-form form, #block-casper-local-tasks ul{
+.views-exposed-form form, #block-casper-local-tasks ul, #block-drupalversiontaxonomytermname ul, #block-categorytaxonomytermname ul{
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
