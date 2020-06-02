@@ -213,3 +213,10 @@ input[type="submit"]:hover {
     color: #bbbdbc;
     text-align: center;
 }
+.view-post-tags{
+    font-size: 14px;
+    margin-bottom:5px;
+}
+.views-field-body p{
+    margin:0px;
+}
