@@ -227,3 +227,6 @@ input[type="submit"]:hover {
 .views-field-body p{
     margin:0px;
 }
+.main-header {
+    margin-bottom: 0px;
+}
