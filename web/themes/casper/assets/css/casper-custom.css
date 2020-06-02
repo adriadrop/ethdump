@@ -207,8 +207,12 @@ input[type="submit"]:hover {
     max-width: 980px;
     margin: 2rem auto;
 }
+.layout-content #block-drupalversiontaxonomytermname ul{
+    padding: 0px;
+}
 .layout-content #block-drupalversiontaxonomytermname li{
     display: inline-block;
+    margin-right: 20px;
 }
 
 .layout-content header h4{
