@@ -182,7 +182,7 @@ input[type="submit"]:hover {
     width:70%;
 }
 .views-exposed-form form div#edit-actions{
-    width:70%;
+    width:20%;
 }
 .views-exposed-form form input[type="search"], .views-exposed-form form input[type="text"], #block-casper-content form input[type="text"]{
     padding: 15px 10px;
