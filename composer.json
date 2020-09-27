@@ -25,15 +25,96 @@
           "url": "https://github.com/antennaio/jquery-bar-rating/archive/v1.2.2.zip"
         }
       }
+    },
+    {
+  "type": "package",
+  "package": {
+    "name": "ckeditor-plugin/uploadimage",
+    "version": "4.8.0",
+    "type": "drupal-library",
+    "extra": {
+      "installer-name": "uploadimage"
+    },
+    "dist": {
+      "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.8.0.zip",
+      "type": "zip"
     }
+  }
+},
+{
+  "type": "package",
+  "package": {
+    "name": "ckeditor-plugin/uploadwidget",
+    "version": "4.8.0",
+    "type": "drupal-library",
+    "extra": {
+      "installer-name": "uploadwidget"
+    },
+    "dist": {
+      "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.8.0.zip",
+      "type": "zip"
+    }
+  }
+},
+{
+  "type": "package",
+  "package": {
+    "name": "ckeditor-plugin/filetools",
+    "version": "4.8.0",
+    "type": "drupal-library",
+    "extra": {
+      "installer-name": "filetools"
+    },
+    "dist": {
+      "url": "https://download.ckeditor.com/filetools/releases/filetools_4.8.0.zip",
+      "type": "zip"
+    }
+  }
+},
+{
+  "type": "package",
+  "package": {
+    "name": "ckeditor-plugin/notification",
+    "version": "4.8.0",
+    "type": "drupal-library",
+    "extra": {
+      "installer-name": "notification"
+    },
+    "dist": {
+      "url": "https://download.ckeditor.com/notification/releases/notification_4.8.0.zip",
+      "type": "zip"
+    }
+  }
+},
+{
+  "type": "package",
+  "package": {
+    "name": "ckeditor-plugin/notificationaggregator",
+    "version": "4.8.0",
+    "type": "drupal-library",
+    "extra": {
+      "installer-name": "notificationaggregator"
+    },
+    "dist": {
+      "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.8.0.zip",
+      "type": "zip"
+    }
+  }
+}
     ],
     "require": {
         "php": ">=5.6",
         "antennaio/jquery-bar-rating": "^1.2",
+        "ckeditor-plugin/filetools": "4.8.0",
+        "ckeditor-plugin/notification": "4.8.0",
+        "ckeditor-plugin/notificationaggregator": "4.8.0",
+        "ckeditor-plugin/uploadimage": "4.8.0",
+        "ckeditor-plugin/uploadwidget": "4.8.0",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/backup_migrate": "^4.0",
+        "drupal/ckeditor_uploadimage": "^2.0",
         "drupal/ckwordcount": "^1.0",
         "drupal/codesnippet": "^1.6",
         "drupal/coffee": "^1.0@beta",
@@ -95,6 +176,7 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
+	    "web/libraries/ckeditor/plugins/{$name}": ["vendor:ckeditor-plugin"],
             "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
